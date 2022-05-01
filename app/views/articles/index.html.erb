@@ -5,6 +5,11 @@
 <%= submit_tag 'Search', class: "btn btn-info" %>
   <% end %>
 
+<%= form_tag users_path, method: :post do %>
+<p>Отримувати щоденну підбірку новин на пошту: <%= text_field_tag 'user[email]' %>
+<%= button_tag 'Додати', class: "edit_button", notice: "Done" %>
+<% end %>
+
 <table>
   <thead>
   <tr>

@@ -1,0 +1,8 @@
+<h1>Топ новин за сьогодні</h1>
+
+<p>Підбірка найкращих новин цього дня:
+  <% Article.where(date: Date.today).each do |news| %>
+    <p><%= news.title %></p>
+    <p><a href=<%= news.link %>> Читать> </a></p>
+    <% end %>
+</p>
