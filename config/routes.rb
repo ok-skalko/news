@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
   resources :articles
+  post '/users', :to => 'users#create'
 end

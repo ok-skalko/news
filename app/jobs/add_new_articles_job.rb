@@ -9,5 +9,12 @@ class AddNewArticlesJob < ApplicationJob
       all_news.each do |one_news|
         Article.create(title: one_news.children.text, link: one_news.attributes['href'].value, date: Date.today)
       end
+      send_email
     end
+
+  private
+
+  def send_email
+    ArticleMailer.top_news_today.deliver_later
+  end
 end
