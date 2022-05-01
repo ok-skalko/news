@@ -1,0 +1,4 @@
+add_new_articles:
+  cron: "0 18 * * *"
+  class: "AddNewArticlesJob"
+  queue: default
