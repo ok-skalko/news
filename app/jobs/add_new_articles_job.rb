@@ -8,7 +8,7 @@ class AddNewArticlesJob < ApplicationJob
     @point_articles = []
     page = 1
     per_page = all_news.count
-    while per_page == 30
+    while per_page > 0
       pagination_parsed_page = parsed_url("https://news.ycombinator.com/front?day=#{Date.today}&p=#{page}")
       pagination_all_news = pagination_parsed_page.css('a.titlelink')
       create_list_of_articles(pagination_all_news)
